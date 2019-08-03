@@ -1,0 +1,26 @@
+/* RESETS */
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* VARIABLES */
+:root {
+  --black: rgb(0,0,0);
+  --white: rgb(255,255,255);
+  --almostBlack: rgb(52,52,52);
+  --gold: rgb(226,182,5);
+  --roboto: 'Roboto', sans-serif;
+  --raleway: 'Raleway', sans-serif;
+  --montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

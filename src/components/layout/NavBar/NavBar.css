@@ -1,0 +1,25 @@
+#NavBar {
+  width: 100%;
+  height: 4rem;
+  background:  var(--almostBlack);
+  position: relative;
+}
+
+.BrandLogo {
+  width: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+.BrandName {
+  position: absolute;
+  top: 50%;
+  left: 5rem;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 2rem;
+  line-height: 2rem;
+  font-family: var(--raleway);
+}
