@@ -44,3 +44,13 @@
 .NavLinks ul li:hover {
   cursor: pointer;
 }
+
+.NavItem {
+  padding: .5rem;
+  transition: all 0.5s;
+}
+
+.NavItem.active {
+  background: var(--gold);
+  color: var(--black);
+}

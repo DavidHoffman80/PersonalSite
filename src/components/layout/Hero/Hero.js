@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HeroImage from './Hero.jpg';
 // CSS
 import './Hero.css';
 

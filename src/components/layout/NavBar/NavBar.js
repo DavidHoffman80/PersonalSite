@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import Brand from './infinity-symbol-white-transparent-background.png';
 //CSS
 import './NavBar.css';
@@ -20,6 +20,7 @@ class NavBar extends Component {
                 smooth={true}
                 offset={0}
                 duration={500}
+                className='NavItem'
               >Home</Link>
             </li>
             <li>
@@ -30,6 +31,7 @@ class NavBar extends Component {
                 smooth={true}
                 offset={0}
                 duration={500}
+                className='NavItem'
               >About</Link>
             </li>
             <li>
@@ -40,6 +42,7 @@ class NavBar extends Component {
                 smooth={true}
                 offset={0}
                 duration={500}
+                className='NavItem'
               >Contact</Link>
             </li>
           </ul>
