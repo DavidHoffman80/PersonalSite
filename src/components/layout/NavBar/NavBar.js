@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, animateScroll as scroll } from 'react-scroll';
 import Brand from './infinity-symbol-white-transparent-background.png';
 //CSS
 import './NavBar.css';
@@ -10,6 +11,38 @@ class NavBar extends Component {
         <img src={Brand} alt='Infinity symbol - Brand Logo' className='BrandLogo' />
         <h1 className='BrandName'>Dave Hoffman</h1>
         <div className='NavLinks'>
+          <ul>
+            <li>
+              <Link
+                activeClass='active'
+                to='Hero'
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >Home</Link>
+            </li>
+            <li>
+              <Link
+                activeClass='active'
+                to='About'
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >About</Link>
+            </li>
+            <li>
+              <Link
+                activeClass='active'
+                to='Contact'
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >Contact</Link>
+            </li>
+          </ul>
         </div>
       </div>
     )

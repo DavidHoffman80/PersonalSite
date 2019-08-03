@@ -1,7 +1,7 @@
 Professional Portfolio
 ======================
 This is my professional portfolio.
-This site uses React and Material UI for the front end and Firebase as the backend.
+This site uses React for the front end and Firebase as the backend.
 
 Goals
 -----
