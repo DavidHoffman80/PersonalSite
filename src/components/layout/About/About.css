@@ -1,5 +1,45 @@
 #About {
   width: 100%;
   height: 100vh;
+  background: var(--almostWhite);
+  position: relative;
+  z-index: 10;
+}
+
+.AboutCard {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  top: -30px;
+  left: 50%;
   background: var(--white);
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+
+.AboutCard h1 {
+  font-family: var(--roboto);
+}
+
+.AboutCard h1:first-child {
+  position: absolute;
+  width: 300px;
+  top: 30%;
+  left: 10%;
+}
+
+.AboutCard h1:last-child {
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  left: 10%;
+}
+
+.AboutMe {
+  max-width: 400px;
+  position: absolute;
+  top: 40%;
+  left: 7%;
+  font-family: var(--montserrat);
+  font-size: 1.5rem;
+  line-height: 2rem;
 }

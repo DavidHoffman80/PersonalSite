@@ -3,6 +3,7 @@
   height: 4rem;
   background:  var(--almostBlack);
   position: fixed;
+  z-index: 100;
 }
 
 .BrandLogo {
@@ -25,32 +26,31 @@
 }
 
 .NavLinks {
-  color: var(--white);
-}
-
-.NavLinks ul {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 1rem;
   transform: translateY(-50%);
-  text-align: right;
+  color: var(--white);
+  text-align: center;
+  font-family: var(--montserrat);
 }
 
-.NavLinks ul li {
+.NavLinks li {
   display: inline;
-  padding-right: 1rem;
 }
 
-.NavLinks ul li:hover {
+.NavLinks li:hover {
   cursor: pointer;
 }
 
 .NavItem {
-  padding: .5rem;
+  padding: .5rem .75rem;
+  border-radius: 30px;
   transition: all 0.5s;
 }
 
 .NavItem.active {
   background: var(--gold);
   color: var(--black);
+  transition: all 0.75s 0.25s;
 }
