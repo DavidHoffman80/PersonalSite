@@ -1,6 +1,6 @@
 #About {
   width: 100%;
-  height: 100vh;
+  padding-bottom: 6rem;
   background: var(--almostWhite);
   position: relative;
   z-index: 10;
@@ -16,30 +16,66 @@
   box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
 }
 
-.AboutCard h1 {
+.AboutCardCont {
+  width: 275px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.AboutCardCont h1 {
   font-family: var(--roboto);
 }
 
-.AboutCard h1:first-child {
-  position: absolute;
-  width: 300px;
-  top: 30%;
-  left: 10%;
+.AboutCardCont h1:first-child {
+  margin-bottom: 1.5rem;
 }
 
-.AboutCard h1:last-child {
-  position: absolute;
-  width: 300px;
-  top: 50%;
-  left: 10%;
+.AboutCardCont h1:last-child {
+  color: var(--gold);
 }
 
 .AboutMe {
   max-width: 400px;
   position: absolute;
-  top: 40%;
+  top: 400px;
   left: 7%;
   font-family: var(--montserrat);
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+
+.Services {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 25rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-column-gap: 30px;
+  text-align: center;
+}
+
+.ServicesTitle {
+  grid-column: 1 / 3;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-family: var(--roboto);
+}
+
+.Services h2 {
+  font-family: var(--roboto);
+  margin: 2rem 0;
+}
+
+.Services img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.Services p {
+  font-family: var(--montserrat);
+  font-size: 1.25rem;
+  line-height: 2.5rem;
 }

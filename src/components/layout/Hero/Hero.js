@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
-import HeroImage from './Hero.jpg';
 // CSS
 import './Hero.css';
 
@@ -23,8 +22,8 @@ class Hero extends Component {
             spy={true}
             smooth={true}
             offset={0}
-            duration={500}
-          >See More  <i class="fas fa-chevron-down"></i></Link>
+            duration={750}
+          >See More  <i className="fas fa-chevron-down"></i></Link>
         </div>
       </div>
     )

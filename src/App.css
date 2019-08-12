@@ -1,5 +1,5 @@
 /* RESETS */
-h1, h2, h3, h4, h5, h6, p, ul, ol {
+h1, h2, h3, h4, h5, h6, p, ul, ol, form {
   margin: 0;
   padding: 0;
 }
@@ -8,13 +8,19 @@ ul, ol {
   list-style: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* VARIABLES */
 :root {
   --black: rgb(0,0,0);
   --white: rgb(255,255,255);
   --almostBlack: rgb(52,52,52);
+  --gray: rgb(100,100,100);
   --almostWhite: rgb(245,245,245);
   --gold: rgb(226,182,5);
+  --transparentGold: rgba(226,182,5,0.9);
   --roboto: 'Roboto', sans-serif;
   --raleway: 'Raleway', sans-serif;
   --montserrat: 'Montserrat', sans-serif;

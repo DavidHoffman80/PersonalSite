@@ -18,7 +18,7 @@ class NavBar extends Component {
               spy={true}
               smooth={true}
               offset={0}
-              duration={500}
+              duration={750}
               className='NavItem'
             >Home</Link>
           </li>
