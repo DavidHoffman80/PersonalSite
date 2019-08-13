@@ -9,6 +9,8 @@ class Contact extends Component {
     lastNameInputLabelActive: false,
     emailInputLabelActive: false,
     phoneInputLabelActive: false,
+    companyInputLabelActive: false,
+    helpInputLabelActive: false
   }
 
   inputClicked = e => {
@@ -51,6 +53,28 @@ class Contact extends Component {
           this.setState(prevState => {
             return {
               phoneInputLabelActive: !prevState.phoneInputLabelActive
+            }
+          }, () => console.log(this.state));
+          break;
+        } else {
+          break;
+        }
+      case 'company':
+        if(e.target.value === '') {
+          this.setState(prevState => {
+            return {
+              companyInputLabelActive: !prevState.companyInputLabelActive
+            }
+          }, () => console.log(this.state));
+          break;
+        } else {
+          break;
+      }
+      case 'helpDesc':
+        if(e.target.value === '') {
+          this.setState(prevState => {
+            return {
+              helpInputLabelActive: !prevState.helpInputLabelActive
             }
           }, () => console.log(this.state));
           break;
@@ -109,6 +133,28 @@ class Contact extends Component {
         } else {
           break;
         }
+      case 'company':
+        if(e.target.value === '') {
+          this.setState(prevState => {
+            return {
+              companyInputLabelActive: !prevState.companyInputLabelActive
+            }
+          }, () => console.log(this.state));
+          break;
+        } else {
+          break;
+        }
+      case 'helpDesc':
+        if(e.target.value === '') {
+          this.setState(prevState => {
+            return {
+              helpInputLabelActive: !prevState.helpInputLabelActive
+            }
+          }, () => console.log(this.state));
+          break;
+        } else {
+          break;
+        }
       default:
         console.log(e.target.className);
     }
@@ -118,7 +164,7 @@ class Contact extends Component {
     return (
       <div className='Contact' id='Contact'>
         <div className='ContactFormCont'>
-          <h1 className='ContactFormTitle'>Contact Me</h1>
+          <h1 className='ContactFormTitle'>CONTACT ME</h1>
           <form className='ContactForm'>
             <label className='first_name_label label'>
               <input className='first_name' onFocus={this.inputClicked} onBlur={this.focusLost} />
@@ -135,6 +181,17 @@ class Contact extends Component {
             <label className='phone_label label'>
               <input className='phone' onFocus={this.inputClicked} onBlur={this.focusLost} />
               <div className={this.state.phoneInputLabelActive ? 'label_phone active' : 'label_phone'}>Phone *</div>
+            </label>
+            <label className='company_label label'>
+              <input className='company' onFocus={this.inputClicked} onBlur={this.focusLost} />
+              <div className={this.state.companyInputLabelActive ? 'label_company active' : 'label_company'}>Company *</div>
+            </label>
+            <div className='helpTitleCont'>
+              <p className='helpTitle'>HOW CAN I HELP?</p>
+            </div>
+            <label className='help_label label'>
+              <textarea className='helpDesc' onFocus={this.inputClicked} onBlur={this.focusLost} />
+              <div className={this.state.helpInputLabelActive ? 'label_help active' : 'label_help'}>Message *</div>
             </label>
           </form>
         </div>
