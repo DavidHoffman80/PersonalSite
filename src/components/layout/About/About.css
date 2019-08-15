@@ -39,7 +39,7 @@
 .AboutMe {
   max-width: 400px;
   position: absolute;
-  top: 400px;
+  top: 300px;
   left: 7%;
   font-family: var(--montserrat);
   font-size: 1.25rem;
@@ -49,7 +49,7 @@
 .Services {
   width: 80%;
   margin: 0 auto;
-  padding-top: 25rem;
+  padding-top: 18rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, auto);

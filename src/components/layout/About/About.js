@@ -28,7 +28,7 @@ class About extends Component {
             Designs that are aesthetically pleasing and a user experience that is nothing short of jubilance.
           </p>
           <p>
-            Custom front end development that focuses on a high satisfaction of user experience and responsive design.
+            Custom front end development that focuses on user experience and responsive design.
           </p>
         </div>
       </div>
