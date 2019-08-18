@@ -36,7 +36,7 @@ class Contact extends Component {
           return {
             [target]: !prevState[target]
           }
-        }, () => console.log(this.state));
+        });
       }
     }
   }
@@ -56,7 +56,7 @@ class Contact extends Component {
           return {
             [target]: !prevState[target]
           }
-        }, () => console.log(this.state));
+        });
       }
     }
   }
@@ -69,7 +69,7 @@ class Contact extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.contact_info(this.state);
   }
 
   render() {

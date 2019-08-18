@@ -1,3 +1,7 @@
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+
 var firebaseConfig = {
   apiKey: "AIzaSyBMcuhJi0xNL02ErvGQkfuYJTt1sg0kuiM",
   authDomain: "personalsite-8baaf.firebaseapp.com",
@@ -9,3 +13,6 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+firebase.firestore().settings({ timestampsInSnapshots: true });
+
+export default firebase;
