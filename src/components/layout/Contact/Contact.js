@@ -1,29 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { contactActions } from '../../../store/actions/contactActions';
+import { contactFormInputFocus, contactFormInputFocusLost, contactFormInfo, contactFormSubmitted } from '../../../store/actions/contactActions';
 // CSS
 import './Contact.css';
 
 class Contact extends Component {
 
-  state = {
-    contact_form_sent: false,
-    first_name_input: false,
-    last_name_input: false,
-    e_mail_input: false,
-    phone_input: false,
-    company_input: false,
-    helpDesc_input: false,
-    first_name: '',
-    last_name: '',
-    e_mail: '',
-    phone: '',
-    company: '',
-    helpDesc: '',
-  }
-
   inputClicked = e => {
     let target = e.target.className;
+
+    
     if(
       target === 'first_name_input' ||
       target === 'last_name_input' ||
@@ -31,13 +17,9 @@ class Contact extends Component {
       target === 'phone_input' ||
       target === 'company_input' ||
       target === 'helpDesc_input'
-    ) {
+    ) {      
       if(e.target.value === '') {
-        this.setState(prevState => {
-          return {
-            [target]: !prevState[target]
-          }
-        });
+        this.props.input_focus(target);
       }
     }
   }
@@ -53,73 +35,56 @@ class Contact extends Component {
       target === 'helpDesc_input'
     ) {
       if(e.target.value === '') {
-        this.setState(prevState => {
-          return {
-            [target]: !prevState[target]
-          }
-        });
+        this.props.focus_lost(target);
       }
     }
   }
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value
-    });
+  handleChange = e => {
+    const id = e.target.id;
+    const value = e.target.value;
+
+    this.props.input_changed(id, value);
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.contact_info(this.state);
-    this.setState({
-      contact_form_sent: true,
-      first_name_input: false,
-      last_name_input: false,
-      e_mail_input: false,
-      phone_input: false,
-      company_input: false,
-      helpDesc_input: false,
-      first_name: '',
-      last_name: '',
-      e_mail: '',
-      phone: '',
-      company: '',
-      helpDesc: '',
-    });
+    this.props.contact_form_submitted(this.props.contactInfo);
   }
 
   render() {
+    console.log(this.props);
+    const { contactForm, contactInfo } = this.props;
+    // const value = contactInfo.first_name ?  : <input type='text' className='first_name_input' id='first_name' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} />;
     return (
       <div className='Contact' id='Contact'>
         <div className='ContactFormCont'>
-          <h1 className='ContactFormTitle'>CONTACT ME</h1>
           <form className='ContactForm' onSubmit={this.handleSubmit}>
+            <h1 className='ContactFormTitle'>CONTACT ME</h1>
             <label className='first_name_label label'>
-              <input type='text' className='first_name_input' id='first_name' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={this.state.first_name} />
-              <div className={this.state.first_name_input ? 'label_first_name active' : 'label_first_name'}>First Name *</div>
+              <input type='text' className='first_name_input' id='first_name' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={contactInfo.first_name} />
+              <div className={contactForm.first_name_input ? 'label_first_name active' : 'label_first_name'}>First Name *</div>
             </label>
             <label className='last_name_label label'>
-              <input type='text' className='last_name_input' id='last_name' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={this.state.last_name} />
-              <div className={this.state.last_name_input ? 'label_last_name active' : 'label_last_name'}>Last Name *</div>
+              <input type='text' className='last_name_input' id='last_name' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={contactInfo.last_name} />
+              <div className={contactForm.last_name_input ? 'label_last_name active' : 'label_last_name'}>Last Name *</div>
             </label>
             <label className='email_label label'>
-              <input type='email' className='e_mail_input' id='e_mail' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={this.state.e_mail} />
-              <div className={this.state.e_mail_input ? 'label_email active' : 'label_email'}>E-Mail *</div>
+              <input type='email' className='e_mail_input' id='e_mail' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={contactInfo.e_mail} />
+              <div className={contactForm.e_mail_input ? 'label_email active' : 'label_email'}>E-Mail *</div>
             </label>
             <label className='phone_label label'>
-              <input type='tel' className='phone_input' id='phone' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={this.state.phone} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
-              <div className={this.state.phone_input ? 'label_phone active' : 'label_phone'}>Phone (123-456-7890) *</div>
+              <input type='tel' className='phone_input' id='phone' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={contactInfo.phone} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+              <div className={contactForm.phone_input ? 'label_phone active' : 'label_phone'}>Phone (123-456-7890) *</div>
             </label>
             <label className='company_label label'>
-              <input type='text' className='company_input' id='company' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={this.state.company} />
-              <div className={this.state.company_input ? 'label_company active' : 'label_company'}>Company *</div>
+              <input type='text' className='company_input' id='company' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={contactInfo.company} />
+              <div className={contactForm.company_input ? 'label_company active' : 'label_company'}>Company *</div>
             </label>
-            <div className='helpTitleCont'>
-              <p className='helpTitle'>HOW CAN I HELP?</p>
-            </div>
+            <h2 className='helpTitle'>HOW CAN I HELP?</h2>
             <label className='help_label label'>
-              <textarea className='helpDesc_input' id='helpDesc' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={this.state.helpDesc} />
-              <div className={this.state.helpDesc_input ? 'label_help active' : 'label_help'}>Message *</div>
+              <textarea className='helpDesc_input' id='helpDesc' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={contactInfo.helpDesc} />
+              <div className={contactForm.helpDesc_input ? 'label_help active' : 'label_help'}>Message *</div>
             </label>
             <button type='submit' id='contactSubmit' className='contactSubmit'>Submit</button>
           </form>
@@ -130,10 +95,20 @@ class Contact extends Component {
   }
 }
 
-const mapDipatchToProps = (dipatch) => {
+const mapStateToProps = (state) => {
   return {
-    contact_info: (info) => dipatch(contactActions(info))
+    contactForm: state.contactForm,
+    contactInfo: state.contactInfo
   }
 }
 
-export default connect(null, mapDipatchToProps)(Contact);
+const mapDipatchToProps = (dispatch) => {
+  return {
+    input_focus: (target) => dispatch(contactFormInputFocus(target)),
+    focus_lost: (target) => dispatch(contactFormInputFocusLost(target)),
+    input_changed: (id, value) => dispatch(contactFormInfo(id, value)),
+    contact_form_submitted: (contactInfo) => dispatch(contactFormSubmitted(contactInfo))
+  }
+}
+
+export default connect(mapStateToProps, mapDipatchToProps)(Contact);

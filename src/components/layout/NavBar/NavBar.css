@@ -54,3 +54,15 @@
   color: var(--black);
   transition: all 0.75s 0.4s;
 }
+
+@media only screen and (max-width: 575px) {
+  .BrandLogo {
+    width: 2rem;
+  }
+
+  .BrandName {
+    left: 4rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}

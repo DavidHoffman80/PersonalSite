@@ -5,6 +5,24 @@ import Brand from './infinity-symbol-white-transparent-background.png';
 import './NavBar.css';
 
 class NavBar extends Component {
+
+  state = {
+    windowWidth: 0
+  }
+
+  componentDidMount() {
+    this.updateWindowWidth();
+    window.addEventListener('resize', this.updateWindowWidth);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowWidth);
+  }
+
+  updateWindowWidth = () => {
+    this.setState({ windowWidth: window.innerWidth });
+  }
+
   render() {
     return (
       <div className='NavBar' id='NavBar'>

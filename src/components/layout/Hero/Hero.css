@@ -44,3 +44,35 @@
 .SeeMoreBtn:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 575px) {
+  .HeroInitiative {
+    top: 100px;
+  }
+
+  .HeroInitiative h1 {
+    font-size: 3rem;
+  }
+
+  .HeroInitiativeSlogan {
+    top: 325px;
+  }
+
+  .HeroInitiativeSlogan h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .HeroInitiative h1 {
+    font-size: 2rem;
+  }
+
+  .HeroInitiativeSlogan {
+    top: 250px;
+  }
+
+  .HeroInitiativeSlogan h2 {
+    font-size: 1.25rem;
+  }
+}

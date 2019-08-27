@@ -20,14 +20,14 @@ class About extends Component {
           </p>
         </div>
         <div className='Services'>
-          <img src={icon1} alt='Web Development Icon' />
-          <img src={icon2} alt='Web Design Icon' />
-          <h2>Web Application Design</h2>
-          <h2>Front End Development</h2>
-          <p>
+          <img className='webAppIcon' src={icon1} alt='Web Development Icon' />
+          <h2 className='webAppTitle'>Web Application Design</h2>
+          <p className='webAppDesc'>
             Designs that are aesthetically pleasing and a user experience that is nothing short of jubilance.
           </p>
-          <p>
+          <img className='frontEndDevIcon' src={icon2} alt='Web Design Icon' />
+          <h2 className='frontEndDevTitle'>Front End Development</h2>
+          <p className='frontEndDevDesc'>
             Custom front end development that focuses on user experience and responsive design.
           </p>
         </div>
