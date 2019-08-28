@@ -1,7 +1,3 @@
-export const contactActions = (info) => {
-  
-}
-
 export const contactFormInputFocus = (target) => {
   return (dispatch) => {
     dispatch({ type: 'INPUT_FOCUS', target});

@@ -53,7 +53,6 @@ class Contact extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { contactForm, contactInfo } = this.props;
     // const value = contactInfo.first_name ?  : <input type='text' className='first_name_input' id='first_name' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} />;
     return (

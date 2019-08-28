@@ -1,4 +1,7 @@
 const initState = {
+  hamburger: {
+    iconActive: false
+  },
   contactForm: {
     first_name_input: false,
     last_name_input: false,
@@ -63,6 +66,13 @@ const rootReducer = (state = initState, { type, target, id, value }) => {
           phone: '',
           company: '',
           helpDesc: ''
+        }
+      }
+    case 'HAMBURGER_CLICKED':
+      return {
+        ...state,
+        hamburger: {
+          iconActive: !state.hamburger.iconActive
         }
       }
     default:
