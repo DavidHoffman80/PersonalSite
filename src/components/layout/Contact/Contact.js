@@ -53,13 +53,13 @@ class Contact extends Component {
   }
 
   render() {
-    const { contactForm, contactInfo } = this.props;
-    // const value = contactInfo.first_name ?  : <input type='text' className='first_name_input' id='first_name' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} />;
+    const { contactForm, contactInfo, login, LogMeIn } = this.props;
+    console.log(login);
     return (
       <div className='Contact' id='Contact'>
         <div className='ContactFormCont'>
           <form className='ContactForm' onSubmit={this.handleSubmit}>
-            <h1 className='ContactFormTitle'>CONTACT ME</h1>
+            <h1 className='ContactFormTitle'>CONTAC<span className='7' onClick={LogMeIn}>T</span> ME</h1>
             <label className='first_name_label label'>
               <input type='text' className='first_name_input' id='first_name' onFocus={this.inputClicked} onBlur={this.focusLost} onChange={this.handleChange} value={contactInfo.first_name} />
               <div className={contactForm.first_name_input ? 'label_first_name active' : 'label_first_name'}>First Name *</div>
@@ -88,7 +88,7 @@ class Contact extends Component {
             <button type='submit' id='contactSubmit' className='contactSubmit'>Submit</button>
           </form>
         </div>
-        <p className='footer'>© Dave Hoffman - 2019</p>
+        <p className='footer'>© Dav<span className='8' onClick={LogMeIn}>e</span> Hoffman - 2019</p>
       </div>
     )
   }
@@ -96,8 +96,8 @@ class Contact extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    contactForm: state.contactForm,
-    contactInfo: state.contactInfo
+    contactForm: state.contact.contactForm,
+    contactInfo: state.contact.contactInfo
   }
 }
 

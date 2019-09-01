@@ -4,7 +4,10 @@ import { Link } from 'react-scroll';
 import './Hero.css';
 
 class Hero extends Component {
+
   render() {
+    const { login, LogMeIn } = this.props;
+    console.log(login);
     return (
       <div className='Hero' id='Hero'>
         <div className='HeroInitiative'>
@@ -13,7 +16,7 @@ class Hero extends Component {
           <h1>for your Business</h1>
         </div>
         <div className='HeroInitiativeSlogan'>
-          <h2>Intuitively human-centered web design for a digital world</h2>
+          <h2><span className='1' onClick={LogMeIn}>I</span>ntuitively human-centered web desig<span className='2' onClick={LogMeIn}>n</span> <span className='3' onClick={LogMeIn}>f</span>or a digital world</h2>
         </div>
         <div className='SeeMoreBtn'>
           <Link

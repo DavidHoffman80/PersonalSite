@@ -131,7 +131,7 @@ class NavBar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    hamburgerActive: state.hamburger.iconActive
+    hamburgerActive: state.nav.hamburger.iconActive
   }
 }
 
