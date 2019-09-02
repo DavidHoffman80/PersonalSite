@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import NavBar from './components/layout/NavBar/NavBar';
 import HomePage from './components/layout/HomePage/HomePage';
 import LoginPage from './components/layout/Login/Login';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 // CSS
 import './App.css';
 

@@ -1,6 +1,14 @@
 const initState = {
   combination: '',
-  loginCombinationCorrect: false
+  loginCombinationCorrect: true,
+  loginFormInput: {
+    user_name_input: false,
+    password_input: false
+  },
+  loginFormInputInfo: {
+    user_name_input: '',
+    password_input: ''
+  }
 };
 
 const loginReducer = (state = initState, action) => {
@@ -18,7 +26,31 @@ const loginReducer = (state = initState, action) => {
           ...state,
           combination: newState
         }
-      }      
+      }
+    case 'LOGIN_FORM_INPUT_ACTIVE':
+      return {
+        ...state,
+        loginFormInput: {
+          ...state.loginFormInput,
+          [action.className]: !state.loginFormInput[action.className]
+        }
+      }
+    case 'LOGIN_FORM_INPUT_FOCUS_LOST':
+      return {
+        ...state,
+        loginFormInput: {
+          ...state.loginFormInput,
+          [action.className]: !state.loginFormInput[action.className]
+        }
+      }
+    case 'LOGIN_FORM_VALUE_CHANGED':
+      return {
+        ...state,
+        loginFormInputInfo: {
+          ...state.loginFormInputInfo,
+          [action.target]: action.value
+        }
+      }
     default:
       return state;
   }
